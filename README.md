@@ -13,19 +13,21 @@ Events
 ------
 You can subscribe to various events the bot has to offer, these are the CommandRecieved, ChatRecieved and BoutListUpdate events.
 
-    Bot = new Bot(login.Username, login.Password, login.Room.IP, login.Room.Port);
-    Bot.ChatRecieved += BotOnChatRecieved;
-    Bot.BoutListUpdate += BotOnBoutListUpdate;
-    
-    private void BotOnChatRecieved(BashCommand line)
-    {
-        LbMain.Items.Add(BashColourStripper.Strip(line.Value));
-    }
-    
-    private void BotOnBoutListUpdate(IEnumerable<BashBout> bouts)
-    {
-        LbUsers.ItemsSource = bouts;
-    }
+```CSharp
+Bot = new Bot(login.Username, login.Password, login.Room.IP, login.Room.Port);
+Bot.ChatRecieved += BotOnChatRecieved;
+Bot.BoutListUpdate += BotOnBoutListUpdate;
+
+private void BotOnChatRecieved(BashCommand line)
+{
+    LbMain.Items.Add(BashColourStripper.Strip(line.Value));
+}
+
+private void BotOnBoutListUpdate(IEnumerable<BashBout> bouts)
+{
+    LbUsers.ItemsSource = bouts;
+}
+```
     
 Modifying the Source
 --------------------
